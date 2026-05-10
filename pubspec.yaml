@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_launcher_icons: ^0.14.0
 
   google_fonts: ^6.2.1
 
@@ -22,3 +23,9 @@ flutter:
 
   assets:
     - assets/images/
+
+flutter_launcher_icons:
+  android: launcher_icon
+  ios: true
+  image_path: assets/images/apple-pimbi.png
+  min_sdk_android: 21
