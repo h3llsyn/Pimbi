@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pimbi/pages/login.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pimbi/pages/splash.dart';
 
 void main() {
   runApp(const MainApp());
@@ -38,7 +39,7 @@ class MainApp extends StatelessWidget {
           cursorColor: Colors.grey,
         ),
       ),
-      home: const LoginPage(),
+      home: const SplashPage(),
     );
   }
 }

@@ -36,7 +36,7 @@ class _SplashPageState extends State<SplashPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/images/tomato-pimbi.png',
+              'assets/images/apple-pimbi.png',
               width: 200,
               height: 200,
             ),
