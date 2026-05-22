@@ -30,6 +30,12 @@ class LoginPage extends StatelessWidget {
             CustomTextForm(label: 'E-mail', icon: Icons.email), 
             const SizedBox(height: 16),
             CustomTextForm(label: 'Senha', icon: Icons.lock, isObscure: true),
+            const SizedBox(height: 16),
+            TextButton(onPressed: (){},
+              child: Text(
+                "Esqueci minha senha"
+              ),
+            ),
           ],
         ),
       ),
