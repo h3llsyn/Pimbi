@@ -32,7 +32,7 @@ class LoginPage extends StatelessWidget {
             CustomTextForm(label: 'E-mail', icon: Icons.email), 
             const SizedBox(height: 16),
             CustomTextForm(label: 'Senha', icon: Icons.lock, isObscure: true),
-            const SizedBox(height: 4),
+            const SizedBox(height: 20),
             TextButton(onPressed: (){},
               style: TextButton.styleFrom(
                 enabledMouseCursor: SystemMouseCursors.click,
