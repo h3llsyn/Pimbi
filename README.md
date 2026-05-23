@@ -3,6 +3,8 @@
 Pimbi é um aplicativo mobile de produtividade baseado na técnica Pomodoro, desenvolvido em Flutter.
 O objetivo do app é ajudar usuários a manterem o foco, organizarem sessões de estudo/trabalho e acompanharem sua evolução de forma simples, divertida e visual.
 
+---
+
 ## ✨ Sobre o projeto
 
 O Pimbi foi criado com foco em:
@@ -67,6 +69,8 @@ Personalização completa:
 * vibração
 * sincronização
 
+---
+
 # 🎨 Design
 
 O design do Pimbi foi pensado para transmitir:
@@ -78,12 +82,16 @@ O design do Pimbi foi pensado para transmitir:
 
 A identidade visual gira em torno da maçã-relógio 🍎, representando a técnica Pomodoro de maneira amigável e moderna.
 
+---
+
 # 🛠️ Tecnologias utilizadas
 
 * Flutter
 * Dart
 * Material Design
 * Google Fonts
+
+---
 
 # 🚧 Status do projeto
 
@@ -98,6 +106,8 @@ Atualmente o projeto está sendo desenvolvido como forma de aprendizado em Flutt
 * Firebase
 * boas práticas
 
+---
+
 # 💡 Funcionalidades planejadas
 
 * [ ] Autenticação com Firebase
@@ -108,6 +118,8 @@ Atualmente o projeto está sendo desenvolvido como forma de aprendizado em Flutt
 * [ ] Ranking de produtividade
 * [ ] Metas diárias
 * [ ] Widgets para Android/iOS
+
+---
 
 # 📚 Objetivo
 
