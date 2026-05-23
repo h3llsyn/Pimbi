@@ -12,6 +12,7 @@ class LoginPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Image.asset('assets/images/apple-pimbi-happy.png', width: 150, height: 150),
             Text(
               'Bem-Vindo(a)!',
               style: TextStyle(
@@ -31,7 +32,7 @@ class LoginPage extends StatelessWidget {
             CustomTextForm(label: 'E-mail', icon: Icons.email), 
             const SizedBox(height: 16),
             CustomTextForm(label: 'Senha', icon: Icons.lock, isObscure: true),
-            const SizedBox(height: 20),
+            const SizedBox(height: 4),
             TextButton(onPressed: (){},
               style: TextButton.styleFrom(
                 enabledMouseCursor: SystemMouseCursors.click,
@@ -77,7 +78,7 @@ class LoginPage extends StatelessWidget {
                 IconButton(onPressed: (){}, icon: Image.asset('assets/images/facebook-logo.png', width: 30, height: 30), mouseCursor: SystemMouseCursors.click),
               ],
             ),
-            const SizedBox(height: 32),
+            const SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
