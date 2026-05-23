@@ -22,11 +22,12 @@ class _CustomTextFormState extends State<CustomTextForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 320,
       child: TextFormField(
         obscureText: _obscure,
         decoration: InputDecoration(
+          contentPadding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
           labelText: widget.label,
           prefixIcon: Icon(widget.icon),
           suffixIcon: widget.isObscure ? IconButton(onPressed: ()

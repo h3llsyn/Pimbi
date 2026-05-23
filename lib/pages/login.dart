@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:pimbi/components/CustomTextForm.dart';
+import 'package:pimbi/components/button.dart';
+import 'package:pimbi/components/customTextForm.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -27,11 +27,11 @@ class LoginPage extends StatelessWidget {
                 color: const Color.fromARGB(255, 99, 99, 99),
               ),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 32),
             CustomTextForm(label: 'E-mail', icon: Icons.email), 
             const SizedBox(height: 16),
             CustomTextForm(label: 'Senha', icon: Icons.lock, isObscure: true),
-            const SizedBox(height: 16),
+            const SizedBox(height: 20),
             TextButton(onPressed: (){},
               style: TextButton.styleFrom(
                 enabledMouseCursor: SystemMouseCursors.click,
@@ -42,28 +42,13 @@ class LoginPage extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.red,
                   fontSize: 14,
-                ),
-              ),
-            ),
-            const SizedBox(height: 16),
-            ElevatedButton(onPressed: (){},
-              style: ElevatedButton.styleFrom(
-                enabledMouseCursor: SystemMouseCursors.click,
-                backgroundColor: Colors.red,
-                overlayColor: Colors.white,
-                fixedSize: Size(320, 50),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                )
-              ),
-              child: Text(
-                "Entrar",
-                style: TextStyle(
-                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
             const SizedBox(height: 20),
+            Button(label: "Entrar"),
+            const SizedBox(height: 24),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children:[
@@ -85,13 +70,35 @@ class LoginPage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                IconButton.outlined(onPressed: (){}, icon: Icon(Icons.g_mobiledata, size: 24)),
-                IconButton.outlined(onPressed: (){}, icon: Icon(Icons.apple, size: 24)),
-                IconButton.outlined(onPressed: (){}, icon: Icon(Icons.facebook, size: 24)),
+                IconButton(onPressed: (){}, icon: Image.asset('assets/images/google-logo.png', width: 30, height: 30), mouseCursor: SystemMouseCursors.click),
+                IconButton(onPressed: (){}, icon: Image.asset('assets/images/apple-logo.png', width: 30, height: 30), mouseCursor: SystemMouseCursors.click),
+                IconButton(onPressed: (){}, icon: Image.asset('assets/images/facebook-logo.png', width: 30, height: 30), mouseCursor: SystemMouseCursors.click),
               ],
-            )
+            ),
+            const SizedBox(height: 32),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Não tem uma conta?",
+                  style: TextStyle(
+                    color: const Color.fromARGB(255, 99, 99, 99),
+                  ),
+                ),
+                TextButton(
+                  onPressed: (){},
+                  child: Text(
+                    "Cadastre-se",
+                    style: TextStyle(
+                      color: Colors.red,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
