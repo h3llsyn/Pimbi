@@ -14,13 +14,13 @@ class LoginPage extends StatelessWidget {
         children: [
           Positioned(
             left: 10,
-            top: 0,
+            top: 10,
             child:
               Image.asset('assets/images/pimbi-logo-escrita.png', width: 190, height: 190),
           ),
           Positioned(
             left: 23,
-            top: 145,
+            top: 155,
             child:
               Text(
                 'Bem-Vindo(a)!',
@@ -32,7 +32,7 @@ class LoginPage extends StatelessWidget {
           ),
           Positioned(
             left: 25,
-            top: 185,
+            top: 195,
             child:
               Text(
                 'Faça login para continuar',
@@ -44,9 +44,9 @@ class LoginPage extends StatelessWidget {
           ),
           Positioned(
             right: 0,
-            top: 20,
+            top: 40,
             child:
-              Image.asset('assets/images/apple-pimbi-happy-abu.png', width: 190, height: 190),
+              Image.asset('assets/images/apple-pimbi-happy-abu.png', width: 170, height: 170),
           ),
           Padding(padding: const EdgeInsets.only(top: 260),
           child:
