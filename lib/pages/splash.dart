@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:pimbi/pages/login.dart';
 
 class SplashPage extends StatefulWidget {
@@ -35,26 +34,33 @@ class _SplashPageState extends State<SplashPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              'assets/images/apple-pimbi.png',
-              width: 200,
-              height: 200,
+            Transform.translate(
+              offset: Offset(0, 10),
+              child: Image.asset('assets/images/apple-pimbi-relogio.png', width: 260, height: 260),
             ),
-            Text(
-              'Pimbi',
-              style: TextStyle(
-                fontSize: 36,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+            // Text(
+            //   'Pimbi',
+            //   style: TextStyle(
+            //     fontSize: 36,
+            //     fontWeight: FontWeight.bold,
+            //     color: Colors.white,
+            //   ),
+            // ),
+            Transform.translate(
+              offset: Offset(0, -10), // sobe 10
+              child: Image.asset('assets/images/pimbi-logo-escrita-brancaa.png', width: 160, height: 160),
             ),
-            Text(
-              'Foque. Trabalhe. Conquiste.',
-              style: TextStyle(
-                fontSize: 18,
-                color: Colors.white,
-              ),
-            )
+            Transform.translate(
+              offset: Offset(0, -40),
+              child:
+                Text(
+                  'Foque. Trabalhe. Conquiste.',
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.white,
+                  ),
+                ),
+            ),
           ],
         ),
       ),

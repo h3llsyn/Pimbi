@@ -40,7 +40,7 @@ class MainApp extends StatelessWidget {
           cursorColor: Color.fromARGB(255, 182, 182, 182),
         ),
       ),
-      home: const SplashPage(),
+      home: const LoginPage(),
     );
   }
 }
