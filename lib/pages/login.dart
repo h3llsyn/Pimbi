@@ -17,7 +17,7 @@ class LoginPage extends StatelessWidget {
             children: [
               AuthHeader(
                 logoEscrita: 'assets/images/pimbi-logo-escrita.png',
-                titulo: 'Bem-Vindo',
+                titulo: 'Bem-Vindo de volta!',
                 subtitulo: 'Faça login para continuar',
                 logoApple: 'assets/images/apple-pimbi-happy-abu.png',
               ),
@@ -26,15 +26,12 @@ class LoginPage extends StatelessWidget {
                 icon: Icons.email,
               ),
               const SizedBox(height: 16),
-
               CustomTextForm(
                 label: 'Senha',
                 icon: Icons.lock,
                 isObscure: true,
               ),
-
               const SizedBox(height: 20),
-
               TextButton(
                 onPressed: () {},
                 style: TextButton.styleFrom(

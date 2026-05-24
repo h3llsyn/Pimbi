@@ -42,7 +42,7 @@ class AuthHeader extends StatelessWidget {
               titulo,
               style: const TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 24,
+                fontSize: 18,
               ),
             ),
           ),
