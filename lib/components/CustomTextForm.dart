@@ -29,14 +29,27 @@ class _CustomTextFormState extends State<CustomTextForm> {
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
           labelText: widget.label,
-          prefixIcon: Icon(widget.icon),
+          prefixIcon: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.red,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Icon(widget.icon, color: Colors.white, size: 18),
+            ),
+          ),
+          prefixIconConstraints: const BoxConstraints(
+            minWidth: 50,
+            minHeight: 50,
+          ),
           suffixIcon: widget.isObscure ? IconButton(onPressed: ()
-            {
-              setState(() {
-                _obscure = !_obscure;
-              });
-            },
-            icon: Icon(_obscure ? Icons.visibility : Icons.visibility_off)
+          {
+            setState(() {
+              _obscure = !_obscure;
+            });
+          },
+          icon: Icon(_obscure ? Icons.visibility: Icons.visibility_off, color: Colors.red),
           ) : null,
         ),
       ),

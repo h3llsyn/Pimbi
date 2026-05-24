@@ -14,23 +14,23 @@ class LoginPage extends StatelessWidget {
             left: 10,
             top: 0,
             child:
-              Image.asset('assets/images/pimbi-logo-escrita.png', width: 170, height: 170),
+              Image.asset('assets/images/pimbi-logo-escrita.png', width: 190, height: 190),
           ),
           Positioned(
-            left: 18,
-            top: 130,
+            left: 23,
+            top: 145,
             child:
               Text(
                 'Bem-Vindo(a)!',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 20,
+                  fontSize: 24,
                 ),
               ),
           ),
           Positioned(
-            left: 18,
-            top: 160,
+            left: 25,
+            top: 185,
             child:
               Text(
                 'Faça login para continuar',
@@ -42,16 +42,15 @@ class LoginPage extends StatelessWidget {
           ),
           Positioned(
             right: 0,
-            top: 0,
+            top: 20,
             child:
-              Image.asset('assets/images/apple-pimbi-happy-abu.png', width: 220, height: 220),
+              Image.asset('assets/images/apple-pimbi-happy-abu.png', width: 190, height: 190),
           ),
-          Padding(padding: const EdgeInsets.only(top: 100),
+          Padding(padding: const EdgeInsets.only(top: 260),
           child:
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                const SizedBox(height: 128),
                 CustomTextForm(label: 'E-mail', icon: Icons.email), 
                 const SizedBox(height: 16),
                 CustomTextForm(label: 'Senha', icon: Icons.lock, isObscure: true),
@@ -94,11 +93,31 @@ class LoginPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    IconButton(onPressed: (){}, icon: Image.asset('assets/images/google-logo.png', width: 30, height: 30), mouseCursor: SystemMouseCursors.click),
-                    IconButton(onPressed: (){}, icon: Image.asset('assets/images/apple-logo.png', width: 30, height: 30), mouseCursor: SystemMouseCursors.click),
-                    IconButton(onPressed: (){}, icon: Image.asset('assets/images/facebook-logo.png', width: 30, height: 30), mouseCursor: SystemMouseCursors.click),
+                    IconButton(onPressed: (){}, icon: Image.asset('assets/images/google-logo.png', width: 35, height: 35), mouseCursor: SystemMouseCursors.click,
+                    style: ButtonStyle(
+                      elevation: WidgetStateProperty.all(1.0),
+                      shadowColor: WidgetStateProperty.all(Colors.black),
+                      backgroundColor: WidgetStateProperty.all(Colors.white),
+                    ),
+                    ),
+                    const SizedBox(width: 30),
+                    IconButton(onPressed: (){}, icon: Image.asset('assets/images/apple-logo.png', width: 35, height: 35), mouseCursor: SystemMouseCursors.click,
+                    style: ButtonStyle(
+                      elevation: WidgetStateProperty.all(1.0),
+                      shadowColor: WidgetStateProperty.all(Colors.black),
+                      backgroundColor: WidgetStateProperty.all(Colors.white),
+                    ),
+                    ),
+                    const SizedBox(width: 30),
+                    IconButton(onPressed: (){}, icon: Image.asset('assets/images/facebook-logo.png', width: 35, height: 35), mouseCursor: SystemMouseCursors.click,
+                    style: ButtonStyle(
+                      elevation: WidgetStateProperty.all(1.0),
+                      shadowColor: WidgetStateProperty.all(Colors.black),
+                      backgroundColor: WidgetStateProperty.all(Colors.white),
+                    ),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 16),
