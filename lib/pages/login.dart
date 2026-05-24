@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pimbi/components/button.dart';
 import 'package:pimbi/components/customTextForm.dart';
+import 'package:pimbi/pages/cadastrar.dart';
+import 'package:pimbi/pages/inicio.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -70,7 +72,12 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 20),
-                Button(label: "Entrar"),
+                Button(
+                  label: "Entrar",
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => InicioPage()));
+                  },
+                ),
                 const SizedBox(height: 24),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -131,7 +138,9 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                     TextButton(
-                      onPressed: (){},
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => CadastrarPage()));
+                      },
                       child: Text(
                         "Cadastre-se",
                         style: TextStyle(
