@@ -64,8 +64,8 @@ class AuthHeader extends StatelessWidget {
             top: 40,
             child: Image.asset(
               logoApple,
-              width: 170,
-              height: 170,
+              width: 165,
+              height: 165,
             ),
           ),
         ],

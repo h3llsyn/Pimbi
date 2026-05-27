@@ -3,6 +3,7 @@ import 'package:pimbi/components/authHeader.dart';
 import 'package:pimbi/components/button.dart';
 import 'package:pimbi/components/customTextForm.dart';
 import 'package:pimbi/pages/login.dart';
+import 'package:pimbi/pages/tutorialPages/telaUm.dart';
 
 class CadastrarPage extends StatelessWidget {
   const CadastrarPage({super.key});
@@ -20,21 +21,11 @@ class CadastrarPage extends StatelessWidget {
                 subtitulo: 'Cadastre-se para começar',
                 logoApple: 'assets/images/apple-pimbi-happy-abu.png',
               ),
-              CustomTextForm(
-                label: 'Nome completo',
-                icon: Icons.person,
-              ),
+              CustomTextForm(label: 'Nome completo', icon: Icons.person),
               const SizedBox(height: 16),
-              CustomTextForm(
-                label: 'E-mail',
-                icon: Icons.email,
-              ),
+              CustomTextForm(label: 'E-mail', icon: Icons.email),
               const SizedBox(height: 16),
-              CustomTextForm(
-                label: 'Senha',
-                icon: Icons.lock,
-                isObscure: true,
-              ),
+              CustomTextForm(label: 'Senha', icon: Icons.lock, isObscure: true),
               const SizedBox(height: 16),
               CustomTextForm(
                 label: 'Confirmar senha',
@@ -44,7 +35,12 @@ class CadastrarPage extends StatelessWidget {
               const SizedBox(height: 20),
               Button(
                 label: "Cadastrar",
-                onPressed: (){}
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const TelaUm()),
+                  );
+                },
               ),
               const SizedBox(height: 16),
               Row(
@@ -52,9 +48,7 @@ class CadastrarPage extends StatelessWidget {
                 children: [
                   const Text(
                     "Já tem uma conta?",
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 99, 99, 99),
-                    ),
+                    style: TextStyle(color: Color.fromARGB(255, 99, 99, 99)),
                   ),
                   TextButton(
                     onPressed: () {

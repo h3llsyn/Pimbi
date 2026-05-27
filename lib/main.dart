@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pimbi/pages/login.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pimbi/pages/splash.dart';
+import 'package:pimbi/pages/tutorialPages/telaUm.dart';
 
 void main() {
   runApp(const MainApp());
@@ -40,7 +41,7 @@ class MainApp extends StatelessWidget {
           cursorColor: Color.fromARGB(255, 182, 182, 182),
         ),
       ),
-      home: const LoginPage(),
+      home: const TelaUm(),
     );
   }
 }
