@@ -36,7 +36,7 @@ class _SplashPageState extends State<SplashPage> {
           children: [
             Transform.translate(
               offset: Offset(0, 10),
-              child: Image.asset('assets/images/apple-pimbi-relogio.png', width: 260, height: 260),
+              child: Image.asset('assets/images/apple-pimbi-relogio-abuu.png', width: 260, height: 260),
             ),
             // Text(
             //   'Pimbi',
