@@ -43,7 +43,10 @@ class TelaUm extends StatelessWidget {
             ],
           ),
           SizedBox(height: 16),
-          Text("Vamos juntos focar, estudar\ne conquistar seus objetivos!"),
+          Text(
+            "Vamos juntos focar, estudar\ne conquistar seus objetivos!",
+            textAlign: TextAlign.center,
+          ),
           SizedBox(height: 80),
           Button(
             label: "Vamos começar",

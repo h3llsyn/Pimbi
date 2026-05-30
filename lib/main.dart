@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pimbi/pages/login.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pimbi/pages/splash.dart';
+import 'package:pimbi/pages/tutorialPages/telaDois.dart';
 import 'package:pimbi/pages/tutorialPages/telaUm.dart';
 
 void main() {
