@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pimbi/components/buttonGoAndBack.dart';
 import 'package:pimbi/components/pularBotao.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:pimbi/pages/tutorialPages/telaTres.dart';
@@ -81,49 +82,9 @@ class TelaDois extends StatelessWidget {
             style: TextStyle(fontSize: 14),
           ),
           SizedBox(height: 36),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(
-                onPressed: () {
-                  Navigator.pop(
-                    context,
-                    MaterialPageRoute(builder: (context) => TelaUm()),
-                  );
-                },
-                mouseCursor: SystemMouseCursors.click,
-                style: ButtonStyle(
-                  elevation: WidgetStateProperty.all(1.0),
-                  shadowColor: WidgetStateProperty.all(Colors.black),
-                  backgroundColor: WidgetStateProperty.all(Colors.white),
-                ),
-                icon: Icon(
-                  Icons.arrow_back_ios_rounded,
-                  color: Colors.red,
-                  size: 36,
-                ),
-              ),
-              SizedBox(width: 180),
-              IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => TelaTres()),
-                  );
-                },
-                mouseCursor: SystemMouseCursors.click,
-                style: ButtonStyle(
-                  elevation: WidgetStateProperty.all(1.0),
-                  shadowColor: WidgetStateProperty.all(Colors.black),
-                  backgroundColor: WidgetStateProperty.all(Colors.white),
-                ),
-                icon: Icon(
-                  Icons.arrow_forward_ios_rounded,
-                  color: Colors.red,
-                  size: 36,
-                ),
-              ),
-            ],
+          ButtonGoAndBack(
+            voltar: TelaUm(),
+            passar: TelaTres(),
           ),
         ],
       ),
