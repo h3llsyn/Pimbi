@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pimbi/components/authHeader.dart';
-import 'package:pimbi/components/button.dart';
-import 'package:pimbi/components/customTextForm.dart';
-import 'package:pimbi/pages/login.dart';
-import 'package:pimbi/pages/tutorialPages/telaUm.dart';
+import 'package:Pimbi/components/authHeader.dart';
+import 'package:Pimbi/components/button.dart';
+import 'package:Pimbi/components/customTextForm.dart';
+import 'package:Pimbi/pages/login.dart';
+import 'package:Pimbi/pages/tutorialPages/telaUm.dart';
 
 class CadastrarPage extends StatelessWidget {
   const CadastrarPage({super.key});

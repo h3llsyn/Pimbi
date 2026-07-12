@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pimbi/components/button.dart';
-import 'package:pimbi/components/pularBotao.dart';
-import 'package:pimbi/pages/tutorialPages/telaDois.dart';
+import 'package:Pimbi/components/button.dart';
+import 'package:Pimbi/components/pularBotao.dart';
+import 'package:Pimbi/pages/tutorialPages/telaDois.dart';
 
 class TelaUm extends StatelessWidget {
   const TelaUm({super.key});

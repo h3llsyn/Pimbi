@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pimbi/components/buildAccountRow.dart';
-import 'package:pimbi/components/buttonGoAndBack.dart';
-import 'package:pimbi/components/pularBotao.dart';
-import 'package:pimbi/pages/tutorialPages/telaDois.dart';
-import 'package:pimbi/pages/tutorialPages/telaQuatro.dart';
+import 'package:Pimbi/components/buildAccountRow.dart';
+import 'package:Pimbi/components/buttonGoAndBack.dart';
+import 'package:Pimbi/components/pularBotao.dart';
+import 'package:Pimbi/pages/tutorialPages/telaDois.dart';
+import 'package:Pimbi/pages/tutorialPages/telaQuatro.dart';
 
 class TelaTres extends StatelessWidget {
   const TelaTres({super.key});

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pimbi/pages/splash.dart';
-import 'package:pimbi/pages/tutorialPages/telaQuatro.dart';
-import 'package:pimbi/pages/tutorialPages/telaTres.dart';
+import 'package:Pimbi/pages/splash.dart';
+import 'package:Pimbi/pages/tutorialPages/telaQuatro.dart';
+import 'package:Pimbi/pages/tutorialPages/telaTres.dart';
 
 void main() {
   runApp(const MainApp());
@@ -41,7 +41,7 @@ class MainApp extends StatelessWidget {
           cursorColor: Color.fromARGB(255, 182, 182, 182),
         ),
       ),
-      home: const TelaTres(),
+      home: const SplashPage(),
     );
   }
 }

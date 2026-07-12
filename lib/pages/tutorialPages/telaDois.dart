@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pimbi/components/buttonGoAndBack.dart';
-import 'package:pimbi/components/pularBotao.dart';
+import 'package:Pimbi/components/buttonGoAndBack.dart';
+import 'package:Pimbi/components/pularBotao.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
-import 'package:pimbi/pages/tutorialPages/telaTres.dart';
-import 'package:pimbi/pages/tutorialPages/telaUm.dart';
+import 'package:Pimbi/pages/tutorialPages/telaTres.dart';
+import 'package:Pimbi/pages/tutorialPages/telaUm.dart';
 
 class TelaDois extends StatelessWidget {
   const TelaDois({super.key});

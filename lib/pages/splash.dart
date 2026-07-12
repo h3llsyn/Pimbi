@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pimbi/pages/login.dart';
+import 'package:Pimbi/pages/login.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});

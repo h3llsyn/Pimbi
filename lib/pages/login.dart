@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pimbi/components/authHeader.dart';
-import 'package:pimbi/components/button.dart';
-import 'package:pimbi/components/customTextForm.dart';
-import 'package:pimbi/pages/cadastrar.dart';
-import 'package:pimbi/pages/inicio.dart';
+import 'package:Pimbi/components/authHeader.dart';
+import 'package:Pimbi/components/button.dart';
+import 'package:Pimbi/components/customTextForm.dart';
+import 'package:Pimbi/pages/cadastrar.dart';
+import 'package:Pimbi/pages/inicio.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});

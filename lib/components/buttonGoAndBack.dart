@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pimbi/pages/tutorialPages/telaTres.dart';
-import 'package:pimbi/pages/tutorialPages/telaUm.dart';
+import 'package:Pimbi/pages/tutorialPages/telaTres.dart';
+import 'package:Pimbi/pages/tutorialPages/telaUm.dart';
 
 class ButtonGoAndBack extends StatelessWidget {
   final Widget voltar;

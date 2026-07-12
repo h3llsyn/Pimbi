@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pimbi/pages/inicio.dart';
+import 'package:Pimbi/pages/inicio.dart';
 
 class PularBotao extends StatelessWidget {
   const PularBotao({super.key});

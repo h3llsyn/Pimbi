@@ -1,4 +1,4 @@
-name: pimbi
+name: Pimbi
 description: "A new Flutter project."
 publish_to: 'none'
 
@@ -30,5 +30,5 @@ flutter:
 flutter_launcher_icons:
   android: launcher_icon
   ios: true
-  image_path: assets/images/apple-pimbi-happy-abu.png
+  image_path: assets/images/pimbi-logo-apple.png
   min_sdk_android: 21
