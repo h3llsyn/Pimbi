@@ -21,9 +21,10 @@ class TelaTres extends StatelessWidget {
               children: [
                 Image.asset(
                   'assets/images/apple-pimbi-bracinhos.png',
-                  height: 180,
-                  width: 180,
+                  height: 200,
+                  width: 200,
                 ),
+                SizedBox(height: 12,),
 
                 Container(
                   margin: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -77,7 +78,7 @@ class TelaTres extends StatelessWidget {
                   ),
                 ),
 
-                SizedBox(height: 42),
+                SizedBox(height: 38),
 
                 const Text(
                   "2. Acompanhe seu progresso",
@@ -98,11 +99,13 @@ class TelaTres extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 36),
+          Spacer(),
+          //SizedBox(height: 36),
           ButtonGoAndBack(
             voltar: TelaDois(),
             passar: TelaQuatro(),
           ),
+          SizedBox(height: 24,)
         ],
       ),
     );
