@@ -1,3 +1,4 @@
+import 'package:Pimbi/components/button.dart';
 import 'package:flutter/material.dart';
 import 'package:Pimbi/components/buildAccountRow.dart';
 import 'package:Pimbi/components/buttonGoAndBack.dart';
@@ -77,9 +78,57 @@ class TelaQuatro extends StatelessWidget {
                     ),
                   ),
                   Spacer(),
-                  ButtonGoAndBack(
-                    voltar: TelaTres(),
-                    passar: InicioPage(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          Navigator.pop(
+                            context,
+                            MaterialPageRoute(builder: (context) => TelaTres()),
+                          );
+                        },
+                        mouseCursor: SystemMouseCursors.click,
+                        style: ButtonStyle(
+                          elevation: WidgetStateProperty.all(1.0),
+                          shadowColor: WidgetStateProperty.all(Colors.black),
+                          backgroundColor: WidgetStateProperty.all(Colors.white),
+                        ),
+                        icon: Icon(
+                          Icons.arrow_back_ios_rounded,
+                          color: Colors.red,
+                          size: 36,
+                        ),
+                      ),
+                      SizedBox(width: 24,),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          enabledMouseCursor: SystemMouseCursors.click,
+                          backgroundColor: Colors.red,
+                          overlayColor: Colors.white,
+                          fixedSize: Size(250, 50),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                        onPressed: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => InicioPage()
+                            ),
+                          );
+                        },
+                        child: Text(
+                          "Começar agora",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   SizedBox(height: 8,),
                 ],
