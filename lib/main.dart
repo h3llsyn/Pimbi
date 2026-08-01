@@ -1,3 +1,5 @@
+import 'package:Pimbi/pages/inicio.dart';
+import 'package:Pimbi/pages/tutorialPages/telaUm.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:Pimbi/pages/splash.dart';
@@ -42,6 +44,11 @@ class MainApp extends StatelessWidget {
         ),
       ),
       home: const SplashPage(),
+      initialRoute: '/',
+      routes: {
+        '/inicio': (context) => const InicioPage(),
+        '/telaTutorial': (context) => const TelaUm()
+      },
     );
   }
 }

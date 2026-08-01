@@ -53,11 +53,10 @@ class LoginPage extends StatelessWidget {
               Button(
                 label: "Entrar",
                 onPressed: () {
-                  Navigator.push(
+                  Navigator.pushNamedAndRemoveUntil(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) => const InicioPage(),
-                    ),
+                    '/inicio',
+                    (route) => false
                   );
                 },
               ),

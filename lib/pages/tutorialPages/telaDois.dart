@@ -86,7 +86,7 @@ Widget build(BuildContext context) {
           voltar: TelaUm(),
           passar: TelaTres(),
         ),
-        SizedBox(height: 24,)
+        SizedBox(height: 36,)
       ],
     ),
   );

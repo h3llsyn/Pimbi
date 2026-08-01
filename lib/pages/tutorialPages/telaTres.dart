@@ -105,7 +105,7 @@ class TelaTres extends StatelessWidget {
             voltar: TelaDois(),
             passar: TelaQuatro(),
           ),
-          SizedBox(height: 24,)
+          SizedBox(height: 36,)
         ],
       ),
     );

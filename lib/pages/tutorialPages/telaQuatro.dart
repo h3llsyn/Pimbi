@@ -112,11 +112,10 @@ class TelaQuatro extends StatelessWidget {
                           ),
                         ),
                         onPressed: (){
-                          Navigator.push(
+                          Navigator.pushNamedAndRemoveUntil(
                             context,
-                            MaterialPageRoute(
-                              builder: (context) => InicioPage()
-                            ),
+                            '/inicio',
+                            (route) => false
                           );
                         },
                         child: Text(
@@ -130,7 +129,7 @@ class TelaQuatro extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 8,),
+                  SizedBox(height: 24,),
                 ],
               ),
             ),

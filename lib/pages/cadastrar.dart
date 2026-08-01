@@ -36,9 +36,10 @@ class CadastrarPage extends StatelessWidget {
               Button(
                 label: "Cadastrar",
                 onPressed: () {
-                  Navigator.push(
+                  Navigator.pushNamedAndRemoveUntil(
                     context,
-                    MaterialPageRoute(builder: (context) => const TelaUm()),
+                    '/telaTutorial',
+                    (route) => false
                   );
                 },
               ),
