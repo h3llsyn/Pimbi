@@ -8,6 +8,7 @@ class InicioPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 3,
+      initialIndex: 1,
       child: Scaffold(
         appBar: AppBarComponent(),
         body: const TabBarView(
