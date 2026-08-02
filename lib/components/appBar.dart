@@ -7,7 +7,7 @@ class AppBarComponent extends StatelessWidget implements PreferredSizeWidget{
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
-      backgroundColor: const Color.fromARGB(221, 255, 243, 247),
+      backgroundColor: Colors.white,
       toolbarHeight: 100,
       centerTitle: true,
       title: Image.asset(
@@ -16,10 +16,15 @@ class AppBarComponent extends StatelessWidget implements PreferredSizeWidget{
         height: 84,
       ),
       bottom: TabBar(
+        indicatorColor: Colors.red,
+        labelColor: Colors.red,
+        labelStyle: TextStyle(
+          fontWeight: FontWeight.bold
+        ),
         tabs: [
+          Tab(text: 'Pausa Curta',),
           Tab(text: 'Pomodoro',),
-          Tab(text: 'Curto',),
-          Tab(text: 'Longo',),
+          Tab(text: 'Pausa Longa',),
         ]
       ),
     );

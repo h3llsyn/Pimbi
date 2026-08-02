@@ -12,9 +12,9 @@ class InicioPage extends StatelessWidget {
         appBar: AppBarComponent(),
         body: const TabBarView(
           children: [
+            Center(child: Text('Tela Curta')),
             Center(child: Text('Tela Pomodoro')),
-            Center(child: Text('Tela Curto')),
-            Center(child: Text('Tela Longo')),
+            Center(child: Text('Tela Longa')),
           ],
         ),
       ),
