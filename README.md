@@ -216,11 +216,12 @@ Cada nova versão do aplicativo será uma oportunidade para implementar novas fu
 As telas abaixo representam o design da **primeira versão** do aplicativo.
 
 - Splash Screen
-- Onboarding
 - Login
 - Cadastro
+- Onboarding
 - Timer Pomodoro
 - Pausa Curta
+- Pausa Longa
 - Estatísticas
 - Histórico
 - Perfil
