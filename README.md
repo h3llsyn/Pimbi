@@ -1,14 +1,8 @@
 # 🍎 Pimbi
 
-<p align="center">
-  <img src="assets/images/logo.png" alt="Logo do Pimbi" width="150"/>
-</p>
-
-<p align="center">
-  <strong>Um aplicativo de produtividade baseado na técnica Pomodoro.</strong><br>
-  Desenvolvido em Flutter para ajudar usuários a manterem o foco, criarem hábitos produtivos e acompanharem sua evolução de forma simples e intuitiva.
-</p>
-
+Um aplicativo de produtividade baseado na técnica Pomodoro.
+Desenvolvido em Flutter para ajudar usuários a manterem o foco, criarem hábitos produtivos e acompanharem sua evolução de forma simples e intuitiva.
+  
 ---
 
 # ✨ Sobre o projeto
