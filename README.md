@@ -1,126 +1,241 @@
 # 🍎 Pimbi
 
-Pimbi é um aplicativo mobile de produtividade baseado na técnica Pomodoro, desenvolvido em Flutter.
-O objetivo do app é ajudar usuários a manterem o foco, organizarem sessões de estudo/trabalho e acompanharem sua evolução de forma simples, divertida e visual.
+<p align="center">
+  <img src="assets/images/logo.png" alt="Logo do Pimbi" width="150"/>
+</p>
+
+<p align="center">
+  <strong>Um aplicativo de produtividade baseado na técnica Pomodoro.</strong><br>
+  Desenvolvido em Flutter para ajudar usuários a manterem o foco, criarem hábitos produtivos e acompanharem sua evolução de forma simples e intuitiva.
+</p>
 
 ---
 
-## ✨ Sobre o projeto
+# ✨ Sobre o projeto
 
-O Pimbi foi criado com foco em:
+O **Pimbi** é um aplicativo mobile de produtividade inspirado na técnica **Pomodoro**, desenvolvido em **Flutter** como parte do meu processo de aprendizado em desenvolvimento mobile.
 
-* produtividade
-* organização
-* foco
-* experiência visual moderna
-* gamificação leve e divertida
+Seu objetivo é tornar sessões de estudo, trabalho e concentração mais organizadas, dividindo o tempo em ciclos de foco e pausas, além de permitir que o usuário acompanhe seu progresso ao longo do tempo.
 
-O app utiliza a técnica Pomodoro para dividir o tempo em ciclos de foco e pausas, ajudando a melhorar a concentração e evitar fadiga mental.
+A identidade visual do projeto gira em torno do mascote **Pimbi**, uma maçã simpática inspirada no tomate da técnica Pomodoro, trazendo uma experiência leve, amigável e motivadora.
 
 ---
 
-# 📱 Telas do aplicativo
+# 📱 Funcionalidades da versão 1.0
 
-## Splash Screen
+## 🚀 Onboarding
 
-Tela inicial com identidade visual do app.
+Apresentação inicial explicando:
 
-## Login e Cadastro
+- Como funciona o método Pomodoro
+- Como acompanhar seu progresso
+- Como criar uma rotina de estudos mais produtiva
 
-Autenticação simples e moderna para acesso ao aplicativo.
+---
 
-## Timer Pomodoro
+## 🔐 Login e Cadastro
 
-* Pomodoro padrão
-* Pausa curta
-* Pausa longa
-* Controle de início, pausa e avanço de ciclos
+- Cadastro de usuários
+- Login
+- Autenticação
 
-## Estatísticas
+---
 
-Acompanhamento de:
+## 🍅 Timer Pomodoro
 
-* horas focadas
-* ciclos concluídos
-* sequência de produtividade
-* gráficos de desempenho
+- Temporizador de foco
+- Pausa curta
+- Pausa longa
+- Iniciar sessão
+- Pausar
+- Reiniciar
+- Pular ciclo
 
-## Histórico
+---
+
+## 📊 Estatísticas
+
+Visualização do desempenho através de:
+
+- Tempo focado
+- Ciclos concluídos
+- Melhor sequência
+- Gráficos diário, semanal e mensal
+
+---
+
+## 📜 Histórico
 
 Registro completo das sessões realizadas.
 
-## Perfil
+---
 
-Área do usuário com:
+## 👤 Perfil
 
-* avatar
-* conquistas
-* estatísticas pessoais
-* progresso geral
+Área do usuário contendo:
 
-## Configurações
+- Avatar
+- Nome
+- E-mail
+- Horas focadas
+- Ciclos concluídos
+- Sequência atual
+- Acesso às configurações
 
-Personalização completa:
+---
 
-* tema claro/escuro
-* idioma
-* cores principais
-* notificações
-* vibração
-* sincronização
+## ⚙️ Configurações
+
+Personalização do aplicativo:
+
+- Tempo de foco (Pomodoro)
+- Tempo da pausa curta
+- Tempo da pausa longa
+- Quantidade de ciclos até a pausa longa
+- Ativar/desativar sons
+- Ativar/desativar lembretes
+- Sobre o aplicativo
+- Sair da conta
 
 ---
 
 # 🎨 Design
 
-O design do Pimbi foi pensado para transmitir:
+O Pimbi foi desenvolvido com foco em uma experiência simples, agradável e moderna.
 
-* leveza
-* motivação
-* foco
-* diversão
+A identidade visual busca transmitir:
 
-A identidade visual gira em torno da maçã-relógio 🍎, representando a técnica Pomodoro de maneira amigável e moderna.
+- 🍎 Leveza
+- 🎯 Foco
+- 📚 Produtividade
+- 🌱 Evolução
+- ❤️ Motivação
+
+Utilizando uma interface limpa, cores suaves e elementos amigáveis, o aplicativo procura incentivar o usuário a manter uma rotina consistente de estudos ou trabalho.
 
 ---
 
 # 🛠️ Tecnologias utilizadas
 
-* Flutter
-* Dart
-* Material Design
-* Google Fonts
+- Flutter
+- Dart
+- Material Design 3
+- Google Fonts
+
+---
+
+# 📂 Estrutura do projeto
+
+```text
+lib/
+├── core/
+├── models/
+├── screens/
+├── services/
+├── widgets/
+├── utils/
+└── main.dart
+```
+
+*A estrutura poderá sofrer alterações conforme o projeto evolui.*
 
 ---
 
 # 🚧 Status do projeto
 
-🧪 Em desenvolvimento
+🧪 **Em desenvolvimento**
 
-Atualmente o projeto está sendo desenvolvido como forma de aprendizado em Flutter, evoluindo gradualmente junto com estudos sobre:
-
-* UI/UX
-* navegação
-* gerenciamento de estado
-* persistência de dados
-* Firebase
-* boas práticas
+O Pimbi está sendo desenvolvido gradualmente como um projeto de estudos, aplicando boas práticas de desenvolvimento mobile e evoluindo conforme novos conhecimentos são adquiridos.
 
 ---
 
-# 💡 Funcionalidades planejadas
+# 🚀 Funcionalidades planejadas
 
-* [ ] Autenticação com Firebase
-* [ ] Salvamento em nuvem
-* [ ] Notificações locais
-* [ ] Sons personalizados
-* [ ] Gamificação
-* [ ] Ranking de produtividade
-* [ ] Metas diárias
-* [ ] Widgets para Android/iOS
+As funcionalidades abaixo estão previstas para futuras versões do aplicativo.
+
+## 👤 Perfil
+
+- [ ] Sistema de níveis
+- [ ] Conquistas
+- [ ] Medalhas
+- [ ] Estatísticas avançadas
+
+---
+
+## 🎨 Personalização
+
+- [ ] Tema claro e escuro
+- [ ] Alteração da cor principal
+- [ ] Idiomas
+- [ ] Sons personalizados
+- [ ] Configurações avançadas de vibração
+
+---
+
+## ☁️ Sincronização
+
+- [ ] Backup em nuvem
+- [ ] Sincronização entre dispositivos
+
+---
+
+## 🎯 Produtividade
+
+- [ ] Metas diárias
+- [ ] Ranking de produtividade
+- [ ] Widgets para Android
+- [ ] Widgets para iOS
+
+---
+
+## 🔥 Infraestrutura
+
+- [ ] Firebase Authentication
+- [ ] Cloud Firestore
+- [ ] Sincronização em tempo real
 
 ---
 
 # 📚 Objetivo
 
-Além de ser um aplicativo funcional, o Pimbi também faz parte do processo de aprendizado de desenvolvimento mobile com Flutter.
+Além de ser um aplicativo funcional, o **Pimbi** representa meu processo de aprendizado em desenvolvimento mobile com Flutter.
+
+Durante seu desenvolvimento estou aprofundando conhecimentos em:
+
+- Flutter
+- Dart
+- UI/UX
+- Material Design
+- Navegação
+- Gerenciamento de estado
+- Persistência de dados
+- Firebase
+- Arquitetura de projetos Flutter
+- Boas práticas de desenvolvimento
+
+Cada nova versão do aplicativo será uma oportunidade para implementar novas funcionalidades e evoluir tanto o projeto quanto minhas habilidades como desenvolvedora.
+
+---
+
+# 📸 Preview
+
+As telas abaixo representam o design da **primeira versão** do aplicativo.
+
+- Splash Screen
+- Onboarding
+- Login
+- Cadastro
+- Timer Pomodoro
+- Pausa Curta
+- Estatísticas
+- Histórico
+- Perfil
+- Configurações
+
+> Algumas telas e funcionalidades presentes nos protótipos mais recentes ainda estão em desenvolvimento e serão adicionadas em versões futuras.
+
+---
+
+# 🤝 Contribuição
+
+Este projeto está sendo desenvolvido principalmente para fins de estudo e aprendizado.
