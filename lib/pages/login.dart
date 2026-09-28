@@ -67,7 +67,33 @@ class _LoginPageState extends State<LoginPage> {
       context,
       '/inicio',
       (route) => false,
+      arguments: true,
     );
+  }
+
+  bool _notificacaoMostrada = false;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+
+    if (_notificacaoMostrada) return;
+
+    final arguments = ModalRoute.of(context)?.settings.arguments;
+
+    if (arguments == true) {
+      _notificacaoMostrada = true;
+
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted) return;
+
+        showAppNotification(
+          context,
+          type: NotificationType.success,
+          message: "Cadastro realizado com sucesso!",
+        );
+      });
+    }
   }
 
   @override
@@ -99,7 +125,7 @@ class _LoginPageState extends State<LoginPage> {
                 isObscure: true,
                 controller: _senhaController,
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 24),
 
               Button(
                 label: "Entrar",
@@ -122,7 +148,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
 
-              const SizedBox(height: 12),
+              const SizedBox(height: 24),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -150,7 +176,7 @@ class _LoginPageState extends State<LoginPage> {
                 ],
               ),
 
-              const SizedBox(height: 20),
+              const SizedBox(height: 32),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

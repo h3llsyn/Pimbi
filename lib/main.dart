@@ -1,5 +1,6 @@
 import 'package:Pimbi/pages/inicio.dart';
 import 'package:Pimbi/pages/login.dart';
+import 'package:Pimbi/pages/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -47,8 +48,9 @@ class MyApp extends StatelessWidget {
               cursorColor: Color.fromARGB(255, 182, 182, 182),
             ),
           ),
-          initialRoute: '/login',
+          initialRoute: '/splash',
           routes: {
+            '/splash': (context) => const SplashPage(),
             '/login': (context) => const LoginPage(),
             '/inicio': (context) => const InicioPage(),
           },
