@@ -3,10 +3,72 @@ import 'package:Pimbi/components/authHeader.dart';
 import 'package:Pimbi/components/button.dart';
 import 'package:Pimbi/components/customTextForm.dart';
 import 'package:Pimbi/pages/cadastrar.dart';
-import 'package:Pimbi/pages/inicio.dart';
+import 'package:Pimbi/components/app_notification.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  final _emailController = TextEditingController();
+  final _senhaController = TextEditingController();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _senhaController.dispose();
+    super.dispose();
+  }
+
+  void _entrar() {
+    final email = _emailController.text.trim();
+    final senha = _senhaController.text;
+
+    if (email.isEmpty) {
+      showAppNotification(
+        context,
+        type: NotificationType.error,
+        message: "Digite seu e-mail",
+      );
+      return;
+    }
+
+    if (!email.contains('@') || !email.contains('.')) {
+      showAppNotification(
+        context,
+        type: NotificationType.error,
+        message: "Digite um e-mail válido",
+      );
+      return;
+    }
+
+    if (senha.isEmpty) {
+      showAppNotification(
+        context,
+        type: NotificationType.error,
+        message: "Digite sua senha",
+      );
+      return;
+    }
+
+    if (senha.length < 6) {
+      showAppNotification(
+        context,
+        type: NotificationType.error,
+        message: "A senha deve ter pelo menos 6 caracteres",
+      );
+      return;
+    }
+
+    Navigator.pushNamedAndRemoveUntil(
+      context,
+      '/inicio',
+      (route) => false,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,17 +83,29 @@ class LoginPage extends StatelessWidget {
                 subtitulo: 'Faça login para continuar',
                 logoApple: 'assets/images/apple-pimbi-happy-abu.png',
               ),
+
               CustomTextForm(
                 label: 'E-mail',
                 icon: Icons.email,
+                controller: _emailController,
+                keyboardType: TextInputType.emailAddress,
               ),
+
               const SizedBox(height: 16),
+
               CustomTextForm(
                 label: 'Senha',
                 icon: Icons.lock,
                 isObscure: true,
+                controller: _senhaController,
               ),
               const SizedBox(height: 20),
+
+              Button(
+                label: "Entrar",
+                onPressed: _entrar,
+              ),
+
               TextButton(
                 onPressed: () {},
                 style: TextButton.styleFrom(
@@ -48,20 +122,7 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 20),
-
-              Button(
-                label: "Entrar",
-                onPressed: () {
-                  Navigator.pushNamedAndRemoveUntil(
-                    context,
-                    '/inicio',
-                    (route) => false
-                  );
-                },
-              ),
-
-              const SizedBox(height: 24),
+              const SizedBox(height: 12),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -94,14 +155,15 @@ class LoginPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-
                   IconButton(
                     onPressed: () {},
                     mouseCursor: SystemMouseCursors.click,
                     style: ButtonStyle(
                       elevation: WidgetStateProperty.all(1.0),
-                      shadowColor: WidgetStateProperty.all(Colors.black),
-                      backgroundColor: WidgetStateProperty.all(Colors.white),
+                      shadowColor:
+                          WidgetStateProperty.all(Colors.black),
+                      backgroundColor:
+                          WidgetStateProperty.all(Colors.white),
                     ),
                     icon: Image.asset(
                       'assets/images/google-logo.png',
@@ -117,8 +179,10 @@ class LoginPage extends StatelessWidget {
                     mouseCursor: SystemMouseCursors.click,
                     style: ButtonStyle(
                       elevation: WidgetStateProperty.all(1.0),
-                      shadowColor: WidgetStateProperty.all(Colors.black),
-                      backgroundColor: WidgetStateProperty.all(Colors.white),
+                      shadowColor:
+                          WidgetStateProperty.all(Colors.black),
+                      backgroundColor:
+                          WidgetStateProperty.all(Colors.white),
                     ),
                     icon: Image.asset(
                       'assets/images/apple-logo.png',
@@ -134,8 +198,10 @@ class LoginPage extends StatelessWidget {
                     mouseCursor: SystemMouseCursors.click,
                     style: ButtonStyle(
                       elevation: WidgetStateProperty.all(1.0),
-                      shadowColor: WidgetStateProperty.all(Colors.black),
-                      backgroundColor: WidgetStateProperty.all(Colors.white),
+                      shadowColor:
+                          WidgetStateProperty.all(Colors.black),
+                      backgroundColor:
+                          WidgetStateProperty.all(Colors.white),
                     ),
                     icon: Image.asset(
                       'assets/images/facebook-logo.png',
@@ -151,7 +217,6 @@ class LoginPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-
                   const Text(
                     "Não tem uma conta?",
                     style: TextStyle(
@@ -164,7 +229,8 @@ class LoginPage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const CadastrarPage(),
+                          builder: (context) =>
+                              const CadastrarPage(),
                         ),
                       );
                     },

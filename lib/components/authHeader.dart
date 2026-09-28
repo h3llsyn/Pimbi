@@ -20,7 +20,7 @@ class AuthHeader extends StatelessWidget {
 
     return SizedBox(
       width: double.infinity,
-      height: 260,
+      height: 240,
 
       child: Stack(
         children: [
