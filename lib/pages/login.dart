@@ -1,3 +1,4 @@
+import 'package:Pimbi/pages/recuperarSenha.dart';
 import 'package:flutter/material.dart';
 import 'package:Pimbi/components/authHeader.dart';
 import 'package:Pimbi/components/button.dart';
@@ -133,7 +134,15 @@ class _LoginPageState extends State<LoginPage> {
               ),
 
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          const RecuperarSenha(),
+                    ),
+                  );
+                },
                 style: TextButton.styleFrom(
                   enabledMouseCursor: SystemMouseCursors.click,
                   overlayColor: Colors.black,
