@@ -1,6 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:Pimbi/pages/login.dart';
-import 'package:video_player/video_player.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -10,48 +12,33 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
-  late VideoPlayerController _videoController;
-  bool _isVideoInitialized = false;
+  // WebP animado com transparência real (o MP4 não suporta canal alfa).
+  static const _animationAsset = 'assets/images/relogio-splash.webp';
+  static const _splashDuration = Duration(seconds: 3);
 
-  @override
-  void initState() {
-    super.initState();
-    _initializeAndPlayVideo();
-  }
+  Timer? _timer;
+  bool _timerScheduled = false;
+  bool _navigated = false;
 
-  void _initializeAndPlayVideo() async {
-    _videoController = VideoPlayerController.asset(
-      'assets/images/relogio-splash_1.mp4',
-    );
-
-    try {
-      await _videoController.initialize();
-      setState(() {
-        _isVideoInitialized = true;
-      });
-      
-      _videoController.play();
-
-      await Future.delayed(const Duration(seconds: 3));
-      _navigateToLogin();
-    } catch (e) {
-      debugPrint("Erro ao carregar o vídeo: $e");
-      _navigateToLogin();
-    }
+  // Só começa a contar os 3s quando o primeiro frame já está na tela.
+  void _scheduleNavigation() {
+    if (!mounted || _timerScheduled) return;
+    _timerScheduled = true;
+    _timer = Timer(_splashDuration, _navigateToLogin);
   }
 
   void _navigateToLogin() {
-    if (mounted) {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const LoginPage()),
-      );
-    }
+    if (!mounted || _navigated) return;
+    _navigated = true;
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => const LoginPage()),
+    );
   }
 
   @override
   void dispose() {
-    _videoController.dispose();
+    _timer?.cancel();
     super.dispose();
   }
 
@@ -60,14 +47,29 @@ class _SplashPageState extends State<SplashPage> {
     return Scaffold(
       backgroundColor: Colors.redAccent,
       body: Center(
-        child: _isVideoInitialized
-            ? AspectRatio(
-                aspectRatio: _videoController.value.aspectRatio,
-                child: VideoPlayer(_videoController),
-              )
-            : const CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-              ),
+        child: Image.asset(
+          _animationAsset,
+          // Tamanho fixo e proporcional à tela (antes ocupava a largura toda).
+          width: 200.w,
+          fit: BoxFit.contain,
+          filterQuality: FilterQuality.medium,
+          gaplessPlayback: true,
+          frameBuilder: (context, child, frame, wasSynchronouslyLoaded) {
+            if (frame != null && !_timerScheduled) {
+              WidgetsBinding.instance.addPostFrameCallback(
+                (_) => _scheduleNavigation(),
+              );
+            }
+            return child;
+          },
+          errorBuilder: (context, error, stackTrace) {
+            debugPrint('Erro ao carregar a animação da splash: $error');
+            WidgetsBinding.instance.addPostFrameCallback(
+              (_) => _navigateToLogin(),
+            );
+            return const SizedBox.shrink();
+          },
+        ),
       ),
     );
   }
