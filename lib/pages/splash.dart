@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:Pimbi/pages/login.dart';
+import 'package:video_player/video_player.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -9,21 +10,49 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
+  late VideoPlayerController _videoController;
+  bool _isVideoInitialized = false;
+
   @override
-  void initState(){
+  void initState() {
     super.initState();
-    Future.delayed(
-      Duration(seconds: 3),
-      (){
-        if(mounted){
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (context) => LoginPage()
-            ),
-          );
-        }
-      }
+    _initializeAndPlayVideo();
+  }
+
+  void _initializeAndPlayVideo() async {
+    _videoController = VideoPlayerController.asset(
+      'assets/images/relogio-splash_1.mp4',
     );
+
+    try {
+      await _videoController.initialize();
+      setState(() {
+        _isVideoInitialized = true;
+      });
+      
+      _videoController.play();
+
+      await Future.delayed(const Duration(seconds: 3));
+      _navigateToLogin();
+    } catch (e) {
+      debugPrint("Erro ao carregar o vídeo: $e");
+      _navigateToLogin();
+    }
+  }
+
+  void _navigateToLogin() {
+    if (mounted) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const LoginPage()),
+      );
+    }
+  }
+
+  @override
+  void dispose() {
+    _videoController.dispose();
+    super.dispose();
   }
 
   @override
@@ -31,38 +60,14 @@ class _SplashPageState extends State<SplashPage> {
     return Scaffold(
       backgroundColor: Colors.redAccent,
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Transform.translate(
-              offset: Offset(0, 10),
-              child: Image.asset('assets/images/apple-pimbi-relogio-abuu.png', width: 260, height: 260),
-            ),
-            // Text(
-            //   'Pimbi',
-            //   style: TextStyle(
-            //     fontSize: 36,
-            //     fontWeight: FontWeight.bold,
-            //     color: Colors.white,
-            //   ),
-            // ),
-            Transform.translate(
-              offset: Offset(0, -10), // sobe 10
-              child: Image.asset('assets/images/pimbi-logo-escrita-brancaa.png', width: 160, height: 160),
-            ),
-            Transform.translate(
-              offset: Offset(0, -40),
-              child:
-                Text(
-                  'Foque. Trabalhe. Conquiste.',
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.white,
-                  ),
-                ),
-            ),
-          ],
-        ),
+        child: _isVideoInitialized
+            ? AspectRatio(
+                aspectRatio: _videoController.value.aspectRatio,
+                child: VideoPlayer(_videoController),
+              )
+            : const CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+              ),
       ),
     );
   }
