@@ -1,4 +1,5 @@
 import 'package:Pimbi/components/app_notification.dart';
+import 'package:Pimbi/services/dados_mock.dart';
 import 'package:flutter/material.dart';
 import 'package:Pimbi/components/authHeader.dart';
 import 'package:Pimbi/components/button.dart';
@@ -26,7 +27,7 @@ class _CadastrarPageState extends State<CadastrarPage> {
     super.dispose();
   }
 
-  void _cadastrar() {
+  Future<void> _cadastrar() async {
     final nome = _nomeController.text.trim();
     final email = _emailController.text.trim();
     final senha = _senhaController.text;
@@ -95,11 +96,29 @@ class _CadastrarPageState extends State<CadastrarPage> {
       return;
     }
 
+    // Verifica se o e-mail já está cadastrado na lista mockada
+    final emailExiste = usuariosMockados.any((user) => user['email'] == email);
+    if (emailExiste) {
+      showAppNotification(
+        context,
+        type: NotificationType.error,
+        message: "Este e-mail já está cadastrado",
+      );
+      return;
+    }
+
+    // Adiciona o novo usuário na lista mockada
+    usuariosMockados.add({
+      'nome': nome,
+      'email': email,
+      'senha': senha,
+    });
+
     Navigator.pushNamedAndRemoveUntil(
       context,
       '/login',
       (route) => false,
-      arguments: true
+      arguments: true,
     );
   }
 
@@ -116,49 +135,38 @@ class _CadastrarPageState extends State<CadastrarPage> {
                 subtitulo: 'Cadastre-se para começar',
                 logoApple: 'assets/images/apple-pimbi-happy-abu.png',
               ),
-
               CustomTextForm(
                 label: 'Nome completo',
                 icon: Icons.person,
                 controller: _nomeController,
               ),
-
               const SizedBox(height: 16),
-
               CustomTextForm(
                 label: 'E-mail',
                 icon: Icons.email,
                 controller: _emailController,
                 keyboardType: TextInputType.emailAddress,
               ),
-
               const SizedBox(height: 16),
-
               CustomTextForm(
                 label: 'Senha',
                 icon: Icons.lock,
                 isObscure: true,
                 controller: _senhaController,
               ),
-
               const SizedBox(height: 16),
-
               CustomTextForm(
                 label: 'Confirmar senha',
                 icon: Icons.lock,
                 isObscure: true,
                 controller: _confirmarSenhaController,
               ),
-
               const SizedBox(height: 20),
-
               Button(
                 label: "Cadastrar",
                 onPressed: _cadastrar,
               ),
-
               const SizedBox(height: 16),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -168,7 +176,6 @@ class _CadastrarPageState extends State<CadastrarPage> {
                       color: Color.fromARGB(255, 99, 99, 99),
                     ),
                   ),
-
                   TextButton(
                     onPressed: () {
                       Navigator.pop(context);

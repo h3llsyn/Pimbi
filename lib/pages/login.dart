@@ -1,3 +1,4 @@
+import 'package:Pimbi/services/dados_mock.dart';
 import 'package:Pimbi/pages/recuperarSenha.dart';
 import 'package:flutter/material.dart';
 import 'package:Pimbi/components/authHeader.dart';
@@ -64,6 +65,22 @@ class _LoginPageState extends State<LoginPage> {
       return;
     }
 
+    // Busca o usuário correspondente na lista mockada
+    final usuarioEncontrado = usuariosMockados.firstWhere(
+      (user) => user['email'] == email && user['senha'] == senha,
+      orElse: () => {},
+    );
+
+    if (usuarioEncontrado.isEmpty) {
+      showAppNotification(
+        context,
+        type: NotificationType.error,
+        message: "E-mail ou senha incorretos",
+      );
+      return;
+    }
+
+    // Redireciona para a tela inicial
     Navigator.pushNamedAndRemoveUntil(
       context,
       '/inicio',
@@ -110,16 +127,13 @@ class _LoginPageState extends State<LoginPage> {
                 subtitulo: 'Faça login para continuar',
                 logoApple: 'assets/images/apple-pimbi-happy-abu.png',
               ),
-
               CustomTextForm(
                 label: 'E-mail',
                 icon: Icons.email,
                 controller: _emailController,
                 keyboardType: TextInputType.emailAddress,
               ),
-
               const SizedBox(height: 16),
-
               CustomTextForm(
                 label: 'Senha',
                 icon: Icons.lock,
@@ -127,19 +141,16 @@ class _LoginPageState extends State<LoginPage> {
                 controller: _senhaController,
               ),
               const SizedBox(height: 24),
-
               Button(
                 label: "Entrar",
                 onPressed: _entrar,
               ),
-
               TextButton(
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>
-                          const RecuperarSenha(),
+                      builder: (context) => const RecuperarSenha(),
                     ),
                   );
                 },
@@ -156,27 +167,23 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-
               const SizedBox(height: 24),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Expanded(
+                children: const [
+                  Expanded(
                     child: Divider(
                       indent: 30,
                       endIndent: 10,
                     ),
                   ),
-
-                  const Text(
+                  Text(
                     "Ou continue com",
                     style: TextStyle(
                       color: Color.fromARGB(255, 99, 99, 99),
                     ),
                   ),
-
-                  const Expanded(
+                  Expanded(
                     child: Divider(
                       indent: 10,
                       endIndent: 30,
@@ -184,9 +191,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ],
               ),
-
               const SizedBox(height: 32),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -195,10 +200,8 @@ class _LoginPageState extends State<LoginPage> {
                     mouseCursor: SystemMouseCursors.click,
                     style: ButtonStyle(
                       elevation: WidgetStateProperty.all(1.0),
-                      shadowColor:
-                          WidgetStateProperty.all(Colors.black),
-                      backgroundColor:
-                          WidgetStateProperty.all(Colors.white),
+                      shadowColor: WidgetStateProperty.all(Colors.black),
+                      backgroundColor: WidgetStateProperty.all(Colors.white),
                     ),
                     icon: Image.asset(
                       'assets/images/google-logo.png',
@@ -206,18 +209,14 @@ class _LoginPageState extends State<LoginPage> {
                       height: 35,
                     ),
                   ),
-
                   const SizedBox(width: 30),
-
                   IconButton(
                     onPressed: () {},
                     mouseCursor: SystemMouseCursors.click,
                     style: ButtonStyle(
                       elevation: WidgetStateProperty.all(1.0),
-                      shadowColor:
-                          WidgetStateProperty.all(Colors.black),
-                      backgroundColor:
-                          WidgetStateProperty.all(Colors.white),
+                      shadowColor: WidgetStateProperty.all(Colors.black),
+                      backgroundColor: WidgetStateProperty.all(Colors.white),
                     ),
                     icon: Image.asset(
                       'assets/images/apple-logo.png',
@@ -225,18 +224,14 @@ class _LoginPageState extends State<LoginPage> {
                       height: 35,
                     ),
                   ),
-
                   const SizedBox(width: 30),
-
                   IconButton(
                     onPressed: () {},
                     mouseCursor: SystemMouseCursors.click,
                     style: ButtonStyle(
                       elevation: WidgetStateProperty.all(1.0),
-                      shadowColor:
-                          WidgetStateProperty.all(Colors.black),
-                      backgroundColor:
-                          WidgetStateProperty.all(Colors.white),
+                      shadowColor: WidgetStateProperty.all(Colors.black),
+                      backgroundColor: WidgetStateProperty.all(Colors.white),
                     ),
                     icon: Image.asset(
                       'assets/images/facebook-logo.png',
@@ -246,9 +241,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ],
               ),
-
               const SizedBox(height: 16),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -258,14 +251,12 @@ class _LoginPageState extends State<LoginPage> {
                       color: Color.fromARGB(255, 99, 99, 99),
                     ),
                   ),
-
                   TextButton(
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) =>
-                              const CadastrarPage(),
+                          builder: (context) => const CadastrarPage(),
                         ),
                       );
                     },
@@ -279,7 +270,6 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ],
               ),
-
               const SizedBox(height: 24),
             ],
           ),
