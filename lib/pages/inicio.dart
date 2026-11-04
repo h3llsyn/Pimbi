@@ -1,5 +1,6 @@
 import 'package:Pimbi/components/appBar.dart';
 import 'package:Pimbi/components/app_notification.dart';
+import 'package:Pimbi/pages/telaPomodoro.dart';
 import 'package:flutter/material.dart';
 
 class InicioPage extends StatefulWidget {
@@ -42,14 +43,12 @@ class _InicioPageState extends State<InicioPage> {
       initialIndex: 1,
       child: Scaffold(
         appBar: AppBarComponent(),
-        body: const TabBarView(
+        body: TabBarView(
           children: [
             Center(
               child: Text('Tela Curta'),
             ),
-            Center(
-              child: Text('Tela Pomodoro'),
-            ),
+            TelaPomodoro(),
             Center(
               child: Text('Tela Longa'),
             ),
